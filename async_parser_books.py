@@ -103,6 +103,8 @@ async def gather_data():
 
 
 def main():
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
     asyncio.run(gather_data())
     cur_time = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M")
 
